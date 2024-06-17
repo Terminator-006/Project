@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     background-color: white;
     margin: 0;
     padding: 0;
@@ -10,7 +10,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5em;
     font-family:'OliverOblique';
     position: sticky;
     top: 0;
@@ -44,19 +43,23 @@ body {
     
 }
  h1{
-    font-size:1.5em;
+    font-size:2.5em;
  }
 h3 {
     color: black;
     margin-top: 20px;
-    font-size: 1.5em;
+    font-size: 1.3em;
+}
+h4{
+    font-size: 1em;
+    
 }
 
 p, ul {
     color: #656565;
     margin: 10px 0;
     padding: 10px;
-    font-size:1.5em;
+    font-size:1.3em;
 }
 
 ul {
@@ -84,7 +87,7 @@ strong {
     position: fixed;
     
     margin-left: 10px;
-    font-size: 3em;
+    font-size: 2.5em;
     color: black;
     text-decoration: none;
     font-weight: bold;
@@ -96,9 +99,7 @@ strong {
     z-index: 5;
 }
 
-.back-button:hover {
-    color: #000;
-}
+
 
 
 .links{
@@ -195,7 +196,8 @@ strong {
 
     .title h1 {
         margin-left: 4.2vh;
-        font-size: 4vh;
+        font-size: 3vh;
+        
     }
 
     .elements {
@@ -215,7 +217,7 @@ strong {
     .back-button {
         top: 10px;
         /* left: 10px; */
-        font-size: 3.5vh;
+        font-size: 3vh;
     }
 
     .links {
@@ -227,17 +229,20 @@ strong {
     }
 
     .links p {
-        font-size: 2.5vh;
+        font-size: 2vh;
         margin: 0;
     }
 
     h3 {
-        font-size: 2.5vh;
+        font-size: 2vh;
         margin-top: 15px;
+    }
+    h4{
+        font-size:1.5vh;
     }
 
     p, ul {
-        font-size: 2.2vh;
+        font-size: 2vh;
     }
 }
 
@@ -245,22 +250,25 @@ strong {
 
     
  @media (min-width: 601px) and (max-width:1130px){
-     .title{
-        font-size:2.5vw;
+     .title h1{
+        font-size: 3.5vw;
+     }
+     
+     .elements-content{
+        padding-left: 5vw;
         
      }
 
-     .elements-content{
-        padding-left: 5vw;
-     }
-
      .back-button{
-        font-size: 4vw;
+        font-size: 3.5vw;
      }
 
      h3{
-        font-size:2.2vw;
+        font-size:2vw;
      }
+     h4{
+        font-size:1.6vw;
+    }
     
     ul, p{
         font-size:1.8vw;

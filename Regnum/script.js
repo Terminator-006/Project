@@ -9,8 +9,9 @@ document.getElementById('waitlistForm').addEventListener('submit', function(even
     console.log("Form submitted");
     event.preventDefault(); 
     const email = document.getElementById('email').value;
+    document.getElementById('email').value = "";
 
-    fetch("https://regnum-beryl.vercel.app/join-waitlist", {
+    fetch("https://regnum-backend-bice.vercel.app/join-waitlist", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -27,4 +28,3 @@ document.getElementById('waitlistForm').addEventListener('submit', function(even
         alert('Error in submitting mail!');
     });
 });
-
