@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Validation</title>
+  <link rel="stylesheet" href="em.css">
+</head>
+<body>
+  <div class="design">
+    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M37 27H24.661C25.882 25.778 26.66 24.114 26.66 22.34V21.34H24.66V22.34C24.66 24.779 22.438 27 20 27H19V29H20C22.438 29 24.66 31.221 24.66 33.66V34.66H26.66V33.66C26.66 31.886 25.882 30.222 24.661 29H37V27Z" fill="black"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="content">
+      <div class="message">
+        <h3>Continue with email</h3>
+        <p>Sign in or sign up with your email</p>
+      </div>
+      <div class="input">
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <p class="error-message" id="error-message"></p>
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="button" id="next-button" disabled>Next</button>
+  </div>
+  <script src="em.js"></script>
+</body>
+</html>
