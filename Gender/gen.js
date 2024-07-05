@@ -15,17 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    function handleDrag(slider, hide1, show1, hide2, show2) {
-        slider.addEventListener('mousedown', function() {
-            isDragging = true;
-            activeSlider = slider;
-        });
+    function startDrag(slider) {
+        isDragging = true;
+        activeSlider = slider;
     }
 
-    document.addEventListener('mousemove', function(event) {
+    function moveDrag(event) {
         if (isDragging && activeSlider) {
             const sliderRect = activeSlider.getBoundingClientRect();
-            const moveX = event.clientX - sliderRect.left;
+            const moveX = (event.touches ? event.touches[0].clientX : event.clientX) - sliderRect.left;
 
             if (moveX > sliderRect.width / 2) {
                 if (activeSlider === slider1) {
@@ -45,13 +43,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 activeSlider = null;
             }
         }
+    }
+
+    function endDrag() {
+        isDragging = false;
+        activeSlider = null;
+    }
+
+    function handleDrag(slider) {
+        slider.addEventListener('mousedown', function() {
+            startDrag(slider);
+        });
+
+        slider.addEventListener('touchstart', function() {
+            startDrag(slider);
+        });
+    }
+
+    document.addEventListener('mousemove', function(event) {
+        moveDrag(event);
+    });
+
+    document.addEventListener('touchmove', function(event) {
+        moveDrag(event);
     });
 
     document.addEventListener('mouseup', function() {
-        isDragging = false;
-        activeSlider = null;
+        endDrag();
     });
 
-    handleDrag(slider1, slider1, slider2, female, male);
-    handleDrag(slider2, slider2, slider1, male, female);
+    document.addEventListener('touchend', function() {
+        endDrag();
+    });
+
+    handleDrag(slider1);
+    handleDrag(slider2);
 });
